@@ -10,6 +10,8 @@ LABEL org.label-schema.docker.dockerfile="/Dockerfile" \
 	org.label-schema.vcs-url="https://github.com/psmb/docker-moodle-alpine" \
 	org.label-schema.vcs-type="Git"
 
+COPY default.conf /etc/nginx/conf.d/default.conf
+
 RUN set -x \
 	&& apk update \
 	&& apk add --virtual .temp-deps libxml2-dev zlib-dev \
