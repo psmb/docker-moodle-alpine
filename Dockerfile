@@ -15,9 +15,11 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 RUN set -x \
 	&& apk update \
 	&& apk add --virtual .temp-deps libxml2-dev zlib-dev \
+	&& docker-php-ext-install mysqli \
 	&& docker-php-ext-install zip \
 	&& docker-php-ext-install soap \
 	&& docker-php-ext-install xmlrpc \
+	&& docker-php-ext-enable mysqli \
 	&& docker-php-ext-enable zip \
 	&& docker-php-ext-enable soap \
 	&& docker-php-ext-enable xmlrpc \
