@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv /bin/bash
+set -ex
+
+chmod 777 -R /var/tmp/nginx/
